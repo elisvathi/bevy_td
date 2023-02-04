@@ -132,10 +132,11 @@ fn world_startup_system(
 }
 
 fn load_tree(asset_server: &Res<AssetServer>)-> Vec<Handle<Scene>> {
-    let tree_normal_1 = asset_server.load("tree_normal_1.gltf#Scene0");
+    vec![asset_server.load("tree_normal_1.gltf#Scene0")]
     // let tree_long_1 = asset_server.load("tree_long_1.gltf#Scene0");
     // let tree_thick_1 = asset_server.load("tree_thick_1.gltf#Scene0");
-    vec![tree_normal_1]
+    // let rock_01 = asset_server.load("rock_01.gltf#Scene0");
+    // vec![tree_normal_1]
 }
 
 impl Plugin for WorldPlugin {
