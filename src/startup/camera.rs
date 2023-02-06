@@ -1,4 +1,6 @@
 use bevy::{prelude::*, input::mouse::{MouseMotion, MouseWheel}};
+use bevy_mod_picking::PickingCameraBundle;
+use bevy_atmosphere::prelude::*;
 ///
 /// Tags an entity as capable of panning and orbiting.
 #[derive(Component)]
@@ -125,7 +127,8 @@ fn spawn_camera(mut commands: Commands) {
             radius,
             ..Default::default()
         },
-    ));
+        PickingCameraBundle::default(),
+    )).insert(AtmosphereCamera {render_layers: None});
 }
 
 

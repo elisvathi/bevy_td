@@ -1,6 +1,10 @@
 use bevy::prelude::*;
 mod world;
 mod camera;
+mod spherical_world;
+use bevy_mod_picking::DefaultPickingPlugins;
+use bevy_atmosphere::prelude::*;
+use bevy_editor_pls::prelude::*;
 
 fn setup_light(mut commands: Commands){
     commands.spawn(PointLightBundle {
@@ -19,8 +23,12 @@ pub struct StartupPlugin;
 impl Plugin for StartupPlugin{
     fn build(&self, app: &mut App){
         app
-           .add_plugin(world::WorldPlugin)
-           .add_plugin(camera::CameraPlugin)
-           .add_startup_system(setup_light);
+        .add_plugin(EditorPlugin)
+        .add_plugins(DefaultPickingPlugins)
+        .add_plugin(camera::CameraPlugin)
+        .add_plugin(AtmospherePlugin)
+        .add_plugin(spherical_world::SphericalWorldPlugin)
+        // .add_plugin(world::WorldPlugin)
+        .add_startup_system(setup_light);
     }
 }

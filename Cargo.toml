@@ -10,7 +10,9 @@ bevy = "0.9"
 rand = "0.8.5"
 bevy_mod_fbx = "0.3.0"    # Autodesk Filmbox (*.fbx) loader for Bevy Engine
 perlin2d = "0.2.6"                     # Lightning fast 2D Perlin Noise generator
-bevy_pancam = "0.7.0"
+bevy_mod_picking = "0.11.0"       # A 3D mouse picking and raycasting plugin for Bevy.
+bevy_atmosphere = "0.5.0"           # A procedural sky plugin for bevy
+bevy_editor_pls = "0.2.0"                    # In-App editor tools for bevy apps
 
 # Enable a small amount of optimization in debug mode
 [profile.dev]
