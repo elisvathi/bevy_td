@@ -27,8 +27,8 @@ impl Plugin for StartupPlugin{
         .add_plugins(DefaultPickingPlugins)
         .add_plugin(camera::CameraPlugin)
         .add_plugin(AtmospherePlugin)
-        .add_plugin(spherical_world::SphericalWorldPlugin)
-        // .add_plugin(world::WorldPlugin)
+        // .add_plugin(spherical_world::SphericalWorldPlugin)
+        .add_plugin(world::WorldPlugin)
         .add_startup_system(setup_light);
     }
 }

@@ -121,6 +121,12 @@ fn spawn_camera(mut commands: Commands) {
         Camera3dBundle {
             transform: Transform::from_translation(translation)
                 .looking_at(Vec3::ZERO, Vec3::Y),
+            projection: Projection::Perspective(PerspectiveProjection {
+                fov: 1.0,
+                near: 0.1,
+                far: 10000.0,
+                aspect_ratio: 1.0,
+            }),
             ..Default::default()
         },
         PanOrbitCamera {
